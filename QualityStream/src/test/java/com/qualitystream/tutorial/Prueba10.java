@@ -9,8 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-
-public class Prueba5 {
+public class Prueba10 {
 	
 	
     private WebDriver driver;
@@ -26,21 +25,27 @@ public class Prueba5 {
     }
    @Test
     public void testFirefoxPage() {
-    	WebElement searchbox = driver.findElement(By.name("job-title"));
-    	
-    	searchbox.clear();
-    	
-    	searchbox.sendKeys("Manager");
-    	
-    	searchbox.submit();
-    	
-    	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    	WebElement Login = driver.findElement(By.className("n-login-header"));
+    	Login.click();
     	
     	
-    }
+    	WebElement Fb = driver.findElement(By.className("pull-left"));
+    	Fb.click();
+    	
+    	WebElement email = driver.findElement(By.id("sb_forgot_email"));
+    	email.sendKeys("Mooibca@gmail.com");
+    	email.submit();
+    	
+    	
+    	
+    	driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+    	
+    	}
+ 	
+    
    @After
    public void tearDown() {
-	   driver.quit();
+	   driver.close();
    }
     
 }

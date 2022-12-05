@@ -12,6 +12,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.bidi.Event;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
@@ -33,7 +34,7 @@ public class Prueba8Falta {
 	@Test
 	public void testFirefoxPage() {
 		
-		int elementPosition = element.getLocation().getY();
+		int elementPosition = Event.getLocation().getY();
 		String js = String.format("window.scroll(10, %s)", elementPosition-90);
 		((JavascriptExecutor)driver).executeScript(js);
 
